@@ -1,0 +1,100 @@
+/* DetalleProducto.module.css */
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+    animation: fadeInOverlay 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modalContent {
+    /* Base styles managed by Tailwind, but keeping animation here */
+    animation: scaleUpContent 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+
+
+/* Internal elements extraction */
+
+
+.modalBook3d {
+    position: relative;
+    z-index: 10;
+    /* width/height in Tailwind */
+    background-color: white;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0.5rem 0.5rem 0;
+    border-left: 4px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.publisherTag {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    letter-spacing: 0.1em;
+}
+
+.detailTitle {
+    font-family: 'Playfair Display', serif;
+}
+
+.detailAuthor {
+    font-family: 'Lora', serif;
+}
+
+.detailStats {
+    border-top: 1px solid #e3dac9;
+    border-bottom: 1px solid #e3dac9;
+}
+
+.detailStatLabel {
+    color: #a1887f;
+    letter-spacing: 0.05em;
+}
+
+.detailStatValue {
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+.detailSynopsisText {
+    font-family: 'Lora', serif;
+    line-height: 1.625;
+}
+
+/* Animations */
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUpContent {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

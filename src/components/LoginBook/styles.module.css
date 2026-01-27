@@ -1,0 +1,49 @@
+/* LoginBook.module.css */
+
+/* Base Transition for Book (Hover/Idle state) */
+.book {
+    transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1), opacity 2s ease;
+}
+
+/* OPTIMIZED ZOOM STATE */
+.zoomState {
+    /* Slower acceleration (2.5s) to appreciate the text as it flies by */
+    transition: transform 2.5s cubic-bezier(0.7, 0, 0.84, 0), opacity 2.5s ease-in;
+
+    /* Kill expensive shadows to prevent stutter during heavy scale */
+    box-shadow: none !important;
+}
+
+.zoomState * {
+    box-shadow: none !important;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotateY(0deg) rotateX(0deg) translateX(0);
+    }
+
+    25% {
+        transform: rotateY(0deg) rotateX(0deg) translateX(-5px);
+    }
+
+    75% {
+        transform: rotateY(0deg) rotateX(0deg) translateX(5px);
+    }
+}
+
+.animateShake {
+    animation: shake 0.4s ease-in-out;
+}
+
+/* AUTOFILL OVERRIDE */
+.autofillInput:-webkit-autofill,
+.autofillInput:-webkit-autofill:hover,
+.autofillInput:-webkit-autofill:focus,
+.autofillInput:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1a100d inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
