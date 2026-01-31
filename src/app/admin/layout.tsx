@@ -15,6 +15,10 @@ export default function AdminLayout({
   const getTitle = () => {
     if (pathname.includes('/usuarios')) return { title: 'Usuarios', sub: 'Gestión general del sistema.' };
     if (pathname.includes('/reportes')) return { title: 'Reportes', sub: 'Estadísticas globales.' };
+    if (pathname.includes('/libros/cargar')) return { title: 'Cargar libro', sub: 'Subir PDF y metadatos.' };
+    if (pathname.includes('/libros/') && pathname !== '/admin/libros') return { title: 'Detalle libro', sub: 'Unidades y segmentos.' };
+    if (pathname.includes('/libros')) return { title: 'Libros', sub: 'Catálogo y carga de libros.' };
+    if (pathname.includes('/escuelas')) return { title: 'Escuelas', sub: 'Gestión de instituciones.' };
     return { title: 'Panel Admin', sub: 'Administración del sistema.' };
   };
 

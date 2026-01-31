@@ -12,6 +12,7 @@ export default function SidebarAdmin({ isOpen }: { isOpen: boolean }) {
         { href: '/admin', icon: 'chart', label: 'Dashboard' },
         { href: '/admin/usuarios', icon: 'users', label: 'Usuarios' },
         { href: '/admin/reportes', icon: 'library', label: 'Reportes' },
+        { href: '/admin/libros', icon: 'library', label: 'Libros' },
       ]}
     />
   );
